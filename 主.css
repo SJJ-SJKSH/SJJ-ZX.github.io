@@ -1,0 +1,119 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.w {
+	width: 1300px;
+	margin: auto;
+	background-color: rgba(255, 204, 51, 0.8);
+}
+
+body {
+	background-color: #f3f5f7;
+}
+
+.logo {
+	padding-left:350px;
+}
+li {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	font-size: 20px;
+}
+
+.na {
+	margin: 10px;
+	/*上面位置间隔*/
+	position: relative;
+}
+
+.na>li {
+	position: relative;
+	float: left;
+	width: 165px;
+	height: 41px;
+	text-align: center;
+}
+
+.na li a {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 41px;
+	color: black;
+}
+.na>li>a:hover {
+	background-color: #eee;
+}
+
+
+
+
+/*右侧悬浮窗*/
+
+.fright {
+	position: fixed;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	transform: translateY(-50%);
+	/*变换效果*/
+	transform: translateY(-50%);
+	transform: translateY(-50%);
+	z-index: 99;
+}
+
+.fright ul {
+	text-align: right;
+}
+
+.fright li {
+	margin: 1px 0;
+	list-style: none;
+}
+
+.fright li a {
+	display: inline-block;
+	width: 130px;
+	font-size: 14px;
+	color: #fff;
+	line-height: 51px;
+	text-align: left;
+	padding: 0 4px;
+	background-color: rgba(0, 66, 132, 0.8);
+	transition: 0.3s;
+}
+
+
+/*缓慢效果*/
+
+.fright.on li a {
+	width: 51px;
+	padding: 0;
+}
+
+.fright li:hover a {
+	background-color: rgba(192, 60, 62, 0.8);
+	width: 153px;
+	color: #fff
+}
+
+.fright.on li:hover a {
+	width: 153px;
+}
+
+.fright li a i {
+	display: block;
+	float: left;
+	width: 51px;
+	height: 51px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	transition: 0.3s;
+}

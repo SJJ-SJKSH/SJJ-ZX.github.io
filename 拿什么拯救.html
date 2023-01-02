@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ECharts</title>
+    <!-- 引入刚刚下载的 ECharts 文件 -->
+    <script src="js/js3/echarts.js"></script>
+    <script src="js/js3/echarts.min.js"></script>
+    <style type="text/css">
+    	/*右侧悬浮窗*/
+li {
+	list-style-type: none;
+}
+a {
+	text-decoration: none;
+	font-size: 20px;
+}
+.fright {
+	position: fixed;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	transform: translateY(-50%);
+	/*变换效果*/
+	transform: translateY(-50%);
+	transform: translateY(-50%);
+	z-index: 99;
+}
+
+.fright ul {
+	text-align: right;
+}
+
+.fright li {
+	margin: 1px 0;
+	list-style: none;
+}
+
+.fright li a {
+	display: inline-block;
+	width: 130px;
+	font-size: 14px;
+	color: #fff;
+	line-height: 51px;
+	text-align: left;
+	padding: 0 4px;
+	background-color: rgba(255, 204, 102, 0.8);
+	transition: 0.3s;
+}
+
+
+/*缓慢效果*/
+
+.fright.on li a {
+	width: 51px;
+	padding: 0;
+}
+
+.fright li:hover a {
+	background-color: rgba(255, 204, 0, 0.8);
+	width: 153px;
+	color: #fff
+}
+
+.fright.on li:hover a {
+	width: 153px;
+}
+
+.fright li a i {
+	display: block;
+	float: left;
+	width: 51px;
+	height: 51px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	transition: 0.3s;
+}
+    </style>
+  </head>
+  <body>
+     <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+     <div id="main" style="width: 650px;height:300px;position:absolute;left: 50px;top:100px;background-color:#FAFAD2;"></div>
+     <div id="main1" style="width: 650px;height:300px;position:absolute;left: 750px;top:100px;background-color:#FAFAD2;"></div>
+     <div id="main2" style="width: 680px;height:300px;position:absolute;left: 50px;top:420px;background-color:#FAFAD2;"></div>
+     <div id="main3" style="width: 650px;height:300px;position:absolute;left: 750px;top:420px;background-color: #FAFAD2;"></div>
+     <div id="main4" style="height:65px;left:center;background-color: rgb(255, 255, 255);"></div>
+    
+     
+     <script type="text/javascript">
+   
+       // 基于准备好的dom，初始化echarts实例
+       var myChart = echarts.init(document.getElementById('main'));
+ 
+       // 指定图表的配置项和数据
+       option = {
+        title: {
+    text: '拯救脱发预算与实际花费',
+    textStyle:{
+      color:"#F78C44"
+    }
+    
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow'
+    }
+  },
+  legend: {},
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: {
+    type: 'value',
+    boundaryGap: [0, 0.01]
+  },
+  yAxis: {
+    type: 'category',
+    data: ['500', '2000', '5000', '10000', '10000+']
+  },
+  series: [
+    {
+      name: '预算',
+      type: 'bar',
+      data: [62, 22, 7, 6,4]
+    },
+    {
+      name: '实际花费',
+      type: 'bar',
+      data: [68, 23, 4, 3,2]
+    }
+  ]
+};
+
+       myChart.setOption(option);
+ 
+       var myChart1 = echarts.init(document.getElementById('main1'));
+ 
+       // 指定图表的配置项和数据
+       option1= {
+  title: {
+    text: '中国植发人群代际分布',
+    subtext: '90后撑起半边天',
+    left: 'center',
+    textStyle:{
+      color:"#F78C44"
+    },
+    subtextStyle: {
+      color: "rgba(0, 0, 0, 1)"
+    }
+  },
+  tooltip: {
+    trigger: 'item'
+  },
+  legend: {
+    orient: 'vertical',
+    left: 'left'
+  },
+  series: [
+    {
+      name: 'Access From',
+      type: 'pie',
+      radius: '50%',
+      data: [
+        { value: 57.4, name: '90后' },
+        { value: 29.1, name: '80后' },
+        { value: 7.1, name: '70后' },
+        { value: 6.4, name: '其他' }
+
+      ],
+      emphasis: {
+        itemStyle: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
+        }
+      }
+    }
+  ]
+};
+
+       myChart1.setOption(option1);
+
+       var myChart2 = echarts.init(document.getElementById('main2'));
+       option2 = {
+  title: {
+    text: '爱用防脱洗发水品牌',
+    textStyle:{
+      color:"#F78C44"
+    }
+  },
+  tooltip: {
+    trigger: 'item',
+    formatter: '{a} <br/>{b} : {c}%'
+  },
+  toolbox: {
+    feature: {
+      dataView: { readOnly: false },
+      restore: {},
+      saveAsImage: {}
+    }
+  },
+  legend: {
+    data: ['吕', '滋源', '卡诗', '美体小铺', '施华蔻']
+  },
+  series: [
+    {
+      name: '爱用防脱洗发水品牌',
+      type: 'funnel',
+      left: '10%',
+      top: 60,
+      bottom: 60,
+      width: '80%',
+      min: 0,
+      max: 100,
+      minSize: '0%',
+      maxSize: '100%',
+      sort: 'descending',
+      gap: 2,
+      label: {
+        show: true,
+        position: 'inside'
+      },
+      labelLine: {
+        length: 10,
+        lineStyle: {
+          width: 1,
+          type: 'solid'
+        }
+      },
+      itemStyle: {
+        borderColor: '#fff',
+        borderWidth: 1
+      },
+      emphasis: {
+        label: {
+          fontSize: 20
+        }
+      },
+      data: [
+        { value: 60, name: '施华蔻' },
+        { value: 40, name: '美体小铺' },
+        { value: 20, name: '卡诗' },
+        { value: 80, name: '滋源' },
+        { value: 100, name: '吕' }
+      ]
+    }
+  ]
+};
+
+       
+       // 使用刚指定的配置项和数据显示图表。
+       
+       myChart2.setOption(option2);
+
+       var myChart3= echarts.init(document.getElementById('main3'));
+       option3 = {
+  title: {
+    text: '拯救脱发方法',
+    textStyle:{
+      color:"#F78C44"
+    }
+  },
+  tooltip: {
+    trigger: 'axis'
+  },
+  legend: {
+    data: ['外用方法']
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
+    }
+  },
+  xAxis: {
+    type: 'category',
+    data: ['防脱洗发水', '生发液/精华', '给头发做护理', '发际线粉', '假发', '外用药物治疗', '生发仪器']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+  
+    {
+      name: '外用方法',
+      type: 'line',
+      step: 'end',
+      data: [63,46, 28, 22, 17,16,5]
+    }
+  ]
+};
+
+       
+       // 使用刚指定的配置项和数据显示图表。
+       
+       myChart3.setOption(option3);
+
+  
+       // 基于准备好的dom，初始化echarts实例
+       var myChart4 = echarts.init(document.getElementById('main4'));
+       option4 = {
+  title: {
+    text: "拿什么拯救头发？",
+    top:20,
+    left: "center",
+
+    textStyle: {
+      fontSize: 40,
+      color: "#FFC800"
+    },
+  }
+}
+       myChart4.setOption(option4);
+
+
+
+     </script>
+
+  <!--右侧浮窗-->
+<div class="fright">
+    <ul>
+        <li class="li1"><a href="index.html" ><i class="i1"></i>首页</a></li>
+        <li class="li2"><a href="开始秃了.html" ><i class="i2"></i>开始秃了</a></li>
+        <li class="li3"><a href="原因及影响.html" ><i class="i3"></i>原因及影响</a></li>
+        <li class="li4"><a href="拿什么拯救.html"><i class="i4"></i>拿什么拯救</a></li>
+       
+    </ul>
+    <span class="down"><i></i></span>
+</div>
+  </body>
+</html>

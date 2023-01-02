@@ -1,0 +1,151 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="js/js1/jquery.js"></script>
+<script type="text/javascript" src="js/js1/echarts.min.js"></script>
+<script type="text/javascript" src="js/js1/js.js"></script>
+<script type="text/javascript" src="js/js1/jquery.limarquee.js"></script>
+<script type="text/javascript" src="js/js1/jquery.cxselect.min.js"></script>
+<link rel="stylesheet" href="css/tutou1.css">
+</head>
+<body>
+<div style="background:#000d4a url(img/bg2.jpg) center top;">
+  <div class="loading">
+    <div class="loadbox"> <img src="picture/loading.gif"> 页面加载中... </div>
+  </div>
+  <div class="back"></div>
+  <div class="head">
+    <h1>开始“秃”了</h1>
+    <div class="weather"><span id="showTime"></span></div>
+	    </div>
+  
+  <div class="mainbox">
+    <ul class="clearfix">
+      <li>
+        <div class="boxall" style="height:545px;">
+
+          <div class="navboxall" >
+			<div class="sycm">
+          <ul class="clearfix">
+            <li>
+              <h2>51.4%</h2>
+              <span>男性</span></li>
+            <li>
+              <h2>43.7%</h2>
+              <span>女性</span></li>
+
+          </ul>
+
+        </div>
+
+			  <ul class="jindu clearfix">
+				  <div></div>
+				  <div></div>
+			  <li id="zb1"></li>
+			  <li id="zb2"></li>
+			  <li id="zb3"></li>
+			  <li id="zb4"></li>
+			  </ul>
+			</div>
+        </div>
+      </li>
+      <li>
+        <div class="boxall" style="height:545px">
+          <div class="alltitle">脱发部位</div>
+          <div class="navboxall" id="echart4"></div>
+        </div>
+      </li>
+      <li>
+        <div class="boxall" style="height:260px">
+          <div class="alltitle">2017年中国脱发人群代际分布</div>
+          <div class="navboxall" id="echart1"> </div>
+        </div>
+        <div class="boxall" style="height:270px">
+          <div class="alltitle">2021年中国脱发人群代际分布</div>
+          <div class="navboxall"  id="echart2"> </div>
+        </div>
+      </li>
+    </ul>
+    <ul class="clearfix">
+      <li>
+        <div class="boxall" style="height:390px;">
+          <div class="alltitle">脱发人群城市Top10</div>
+          <div class="navboxall" >
+            <div class="wraptit"> <span>排名</span><span>城市</span> </div>
+            <div class="wrap">
+              <ul>
+                <li>
+                  <p><span>TOP1</span><span>北京</span></p>
+                </li>
+                <li>
+                  <p><span>TOP2</span><span>上海</span></p>
+                </li>
+                <li>
+                  <p><span>TOP3</span><span>广州</span></p>
+                </li>
+                <li>
+                  <p><span>TOP4</span><span>杭州</span></p>
+                </li>
+                <li>
+                  <p><span>TOP5</span><span>深圳</span></p>
+                </li>
+                <li>
+                  <p><span>TOP6</span><span>成都</span></p>
+                </li>
+                <li>
+                  <p><span>TOP7</span><span>苏州</span></p>
+                </li>
+                <li>
+                  <p><span>TOP8</span><span>重庆</span></p>
+                </li>
+                <li>
+                  <p><span>TOP9</span><span>西安</span></p>
+                </li>
+                <li>
+                  <p><span>TOP10</span><span>武汉</span></p>
+                </li>
+				</ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li style="width:38%">
+        <div class="boxall" style="height:390px">
+          <div class="alltitle">男性脱发行业</div>
+          <div class="navboxall" id="echart3"></div>
+        </div>
+      </li>
+      <li style="width:38%">
+        <div class="boxall" style="height:390px">
+          <div class="alltitle">女性脱发行业</div>
+          <div class="navboxall" id="echart5"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+
+$(function(){
+	$('.wrap').liMarquee({
+		direction: 'up',//身上滚动
+		//runshort: false,//内容不足时不滚动
+		scrollamount: 20//速度
+	});
+});
+</script>
+<!--右侧浮窗-->
+<div class="fright">
+    <ul>
+        <li class="li1"><a href="index.html" ><i class="i1"></i>首页</a></li>
+        <li class="li2"><a href="开始秃了.html" ><i class="i2"></i>开始秃了</a></li>
+        <li class="li3"><a href="原因及影响.html" ><i class="i3"></i>原因及影响</a></li>
+        <li class="li4"><a href="拿什么拯救.html"><i class="i4"></i>拿什么拯救</a></li>
+       
+    </ul>
+    <span class="down"><i></i></span>
+</div>
+</body>
+</html>
